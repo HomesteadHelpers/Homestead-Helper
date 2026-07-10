@@ -1,0 +1,260 @@
+:root {
+  --bg: #f4efe5;
+  --bg-soft: #fef9f1;
+  --ink: #1e2a1f;
+  --ink-soft: #43513f;
+  --accent: #d4622b;
+  --accent-alt: #2f7d5b;
+  --panel: rgba(254, 249, 241, 0.82);
+  --border: rgba(30, 42, 31, 0.16);
+  --shadow: 0 12px 40px rgba(30, 42, 31, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(212, 98, 43, 0.2), transparent 32%),
+    radial-gradient(circle at 82% 24%, rgba(47, 125, 91, 0.2), transparent 34%),
+    linear-gradient(170deg, var(--bg) 0%, #efe6d8 100%);
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+  overflow-x: hidden;
+}
+
+.bg-orb {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(44px);
+  z-index: -1;
+  opacity: 0.36;
+  animation: drift 11s ease-in-out infinite alternate;
+}
+
+.orb-a {
+  background: #d4622b;
+  top: -80px;
+  right: -80px;
+}
+
+.orb-b {
+  background: #2f7d5b;
+  bottom: -110px;
+  left: -70px;
+  animation-delay: 0.9s;
+}
+
+.hero {
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 0.8s ease forwards;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--accent-alt);
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  font-family: "Fraunces", serif;
+}
+
+h1 {
+  margin: 0.1rem 0;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1.06;
+  max-width: 800px;
+}
+
+.hero-copy {
+  color: var(--ink-soft);
+  max-width: 760px;
+  line-height: 1.5;
+}
+
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+.panel {
+  grid-column: span 12;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  backdrop-filter: blur(3px);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: reveal 0.6s ease forwards;
+}
+
+#plants-panel {
+  animation-delay: 0.1s;
+}
+
+#recipes-panel {
+  animation-delay: 0.2s;
+}
+
+#income-panel {
+  animation-delay: 0.3s;
+}
+
+.panel-copy {
+  color: var(--ink-soft);
+  margin-top: 0;
+}
+
+.controls {
+  display: grid;
+  gap: 0.55rem;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: 0.65rem 0.75rem;
+  color: var(--ink);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.66rem 1.05rem;
+  background: linear-gradient(100deg, var(--accent) 0%, #de7f48 100%);
+  color: #fff;
+  font-weight: 700;
+  width: fit-content;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(212, 98, 43, 0.32);
+}
+
+.check-grid {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-bottom: 0.6rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.48rem 0.6rem;
+}
+
+.check-item input {
+  margin: 0;
+}
+
+.results {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent-alt);
+  border-radius: 12px;
+  padding: 0.72rem;
+  background: var(--bg-soft);
+}
+
+.card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0.2rem 0;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  background: rgba(47, 125, 91, 0.12);
+  color: var(--accent-alt);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+}
+
+.empty {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+footer {
+  max-width: 1100px;
+  margin: 1rem auto 0;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 900px) {
+  #plants-panel,
+  #recipes-panel {
+    grid-column: span 6;
+  }
+
+  #income-panel {
+    grid-column: span 12;
+  }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(14px, -14px, 0);
+  }
+}

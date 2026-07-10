@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homestead Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a"></div>
+    <div class="bg-orb orb-b"></div>
+
+    <header class="hero">
+      <p class="eyebrow">Homestead Toolkit</p>
+      <h1>Grow smarter. Waste less. Build self-sufficient income.</h1>
+      <p class="hero-copy">
+        Plan edible and medicinal plants for your environment, discover recipes from what
+        you already have, and find practical side-income options from your land, skills,
+        and inventory.
+      </p>
+    </header>
+
+    <main class="grid">
+      <section class="panel" id="plants-panel">
+        <h2>Plant Finder</h2>
+        <p class="panel-copy">Search by plant name and environment to get focused suggestions.</p>
+        <div class="controls">
+          <label for="plantQuery">Plant or keyword</label>
+          <input id="plantQuery" placeholder="mint, potato, elderberry" />
+
+          <label for="envSelect">Environment</label>
+          <select id="envSelect">
+            <option value="all">All</option>
+            <option value="temperate">Temperate</option>
+            <option value="hot-dry">Hot & Dry</option>
+            <option value="humid">Humid</option>
+            <option value="cool">Cool</option>
+          </select>
+
+          <button id="plantSearchBtn">Find Plants</button>
+        </div>
+        <div id="plantResults" class="results"></div>
+      </section>
+
+      <section class="panel" id="recipes-panel">
+        <h2>Inventory Recipes</h2>
+        <p class="panel-copy">
+          Enter ingredients you have on hand. The app ranks recipes by ingredient match.
+        </p>
+        <div class="controls">
+          <label for="inventoryInput">Inventory (comma separated)</label>
+          <textarea
+            id="inventoryInput"
+            rows="4"
+            placeholder="eggs, onion, flour, milk, spinach"
+          ></textarea>
+          <button id="recipeSearchBtn">Suggest Recipes</button>
+        </div>
+        <div id="recipeResults" class="results"></div>
+      </section>
+
+      <section class="panel" id="income-panel">
+        <h2>Side Income Ideas</h2>
+        <p class="panel-copy">Pick resources you have and get realistic, low-barrier options.</p>
+        <div class="controls check-grid" id="resourceChecks"></div>
+        <button id="incomeBtn">Generate Ideas</button>
+        <div id="incomeResults" class="results"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Homestead Helper MVP</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

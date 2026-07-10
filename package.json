@@ -1,0 +1,33 @@
+{
+  "name": "homestead-helper",
+  "version": "1.0.0",
+  "description": "Homestead Helper is a practical MVP web app for new and experienced homesteaders. It focuses on three day-to-day decisions:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "build:web": "mkdir -p dist && cp index.html styles.css app.js dist/",
+    "android:sync": "npm run build:web && npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:build": "npm run build:web && npx cap copy android"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HomesteadHelpers/Homestead-Helper.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/HomesteadHelpers/Homestead-Helper/issues"
+  },
+  "homepage": "https://github.com/HomesteadHelpers/Homestead-Helper#readme",
+  "dependencies": {
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/core": "^8.4.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.4.1"
+  }
+}
